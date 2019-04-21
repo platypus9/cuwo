@@ -162,9 +162,9 @@ def main():
 
     protocol = MasterServer(loop, filename, blacklist_file)
 
-    print('Running cuwo (master) on port %s' % port)
+    print('Running cuwo (master) on port %s' %  os.getenv("PORT"))
 
-    addr = ('0.0.0.0', port)
+    addr = ('0.0.0.0', os.getenv("PORT"))
     asyncio.Task(loop.create_datagram_endpoint(lambda: protocol,
                                                local_addr=addr))
     loop.run_forever()
