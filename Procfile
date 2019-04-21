@@ -1,1 +1,1 @@
-worker: python main_worker.py
+web: python cuwo/server.py
